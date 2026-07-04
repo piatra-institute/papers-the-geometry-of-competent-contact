@@ -1,0 +1,9 @@
+[project]
+name = "geometry-of-competent-contact-sim"
+version = "0.1.0"
+description = "Exact belief-manifold studies for The Geometry of Competent Contact: the Fisher-Rao curvature self-test, the reward-is-a-quotient proposition, and a reward-only vs competent-contact policy comparison on an active-perception POMDP"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]

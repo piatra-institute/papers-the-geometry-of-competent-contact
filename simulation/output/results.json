@@ -1,0 +1,72 @@
+{
+  "manifold": {
+    "curvature_mean": 0.25,
+    "curvature_expected": 0.25,
+    "curvature_max_abs_dev_from_quarter": 0.0,
+    "quotient_fr_distance": 3.1415,
+    "quotient_value_task1_b00": 1.0,
+    "quotient_value_task1_b01": 1.0,
+    "quotient_task2_decision_b00": 0,
+    "quotient_task2_decision_b01": 1,
+    "quotient_task2_cross_value": 0.0,
+    "r_quotient_fr_distance": 3.14
+  },
+  "probe_value": {
+    "value_task1_vs_k_Aprobes": {
+      "k0": 0.3333,
+      "k1": 0.8,
+      "k2": 0.8,
+      "k3": 0.912
+    },
+    "value_task1_after_AAB": 0.8,
+    "value_task1_marginal_of_Bprobe": 0.0,
+    "entropy": {
+      "prior": 1.7918,
+      "AA": 1.0945,
+      "AABB": 0.679
+    },
+    "mi_Aprobe_about_A_nats": 0.4596,
+    "mi_Bprobe_about_B_nats": 0.2704,
+    "mi_Aprobe_about_B_nats": 0.0,
+    "r_H_prior": 1.79
+  },
+  "policies": {
+    "probe_cost": 0.05,
+    "voi_task1_third_Aprobe": 0.112,
+    "voi_task1_first_Bprobe": 0.0,
+    "reward_only": {
+      "n_probes": 2,
+      "exp_value_task1": 0.8,
+      "exp_value_task2": 0.5,
+      "exp_entropy": 1.0945,
+      "exp_fr_from_prior": 1.282
+    },
+    "competent": {
+      "n_probes": 4,
+      "exp_value_task1": 0.8,
+      "exp_value_task2": 0.85,
+      "exp_entropy": 0.679,
+      "exp_fr_from_prior": 1.6161
+    },
+    "reward_only_net_task1": 0.7,
+    "competent_net_task1": 0.6,
+    "task1_return_gap": 0.0,
+    "reward_only_min_separation": 0.0,
+    "competent_min_separation": 2.4429,
+    "reward_only_Btwin_separation": 0.0,
+    "competent_Btwin_separation": 2.4429,
+    "r_ro_value_task1": 0.8,
+    "r_co_value_task1": 0.8
+  },
+  "transfer": {
+    "reward_only_zeroshot_task2": 0.5,
+    "competent_zeroshot_task2": 0.85,
+    "chance_task2": 0.5,
+    "transfer_gap": 0.35,
+    "reward_only_family_value": 0.65,
+    "competent_family_value": 0.825,
+    "r_ro_zeroshot_task2": 0.5,
+    "r_co_zeroshot_task2": 0.85,
+    "r_transfer_gap": 0.35
+  }
+}
