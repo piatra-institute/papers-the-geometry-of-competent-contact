@@ -1,0 +1,18 @@
+{
+  "pdf_sha256": "e004458b8d7ad4ab64d818da46cf98f4ea2cae7c05f1360361f22c3a29d4bd78",
+  "page_count": 10,
+  "pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "all_pages_inspected": true,
+  "notes": "All 10 pages inspected after the prose revision; figure panel titles replaced with descriptive ones, the d_FR annotation given a white background so it no longer overprints the w0/w1 cells, and the 'chance 0.5' label moved off the competent bar. Metadata-only rebuild: the web blurb in metadata.yaml, a hashed build input, changed, so the PDF was re-rendered (da58c58f7742 to e004458b8d7a); the rendered text is byte-for-byte identical and no page was re-inspected."
+}

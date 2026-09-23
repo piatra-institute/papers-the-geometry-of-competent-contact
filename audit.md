@@ -2,6 +2,19 @@
 
 Dated log of editorial passes and verification runs. Newest first. See the workspace docs (run `papers docs`): writing-pipeline.md §7.
 
+## 2026-09-23 — prose revision
+
+Prose rewritten against the house standards. Headings made descriptive (Abstract, Introduction, Belief space and the Fisher-Rao metric, Reward as a quotient of belief, Two policies with equal return, Transfer to a second task, Limitations: the agent's hypothesis space, Conclusion). "Rather than" 6 -> 0, "this/the paper" 3 -> 0, "not X but Y" 3 -> 0, negate-pivots 2 -> 0, "worth" 2 -> 0.
+
+Corrections:
+  - Curvature self-test: the text said the routine returns 0.25 "with a maximum deviation of 0.0 across the grid" and the abstract said "to machine precision". The results.json field was rounded to 4 decimals; the Brioschi routine uses central finite differences (h = 1e-4) and the true maximum deviation over the 36 grid points is 6.0e-6. analyses.py now also writes curvature_max_abs_dev_unrounded = 6.01e-06, curvature_grid_points = 36 and check_curvature_within_1e-5 = True; the text states 6.0 x 10^-6 as finite-difference error, and the machine-precision claim is removed from the abstract.
+  - Figure 1 caption said the task-1 value rises with the number of A-probes "with a diminishing return". results.json gives 0.3333, 0.8, 0.8, 0.912 for 0-3 probes (the second probe adds nothing with three A-values, the third adds 0.112). The caption now reports these values.
+  - Figure 2 caption described the collapsed B-twin pairs as "dark off-diagonal blocks"; they are the 2x2 blocks on the diagonal. Corrected.
+  - The RDM is built from the terminal belief under the most likely reading of every probe (modal_belief), not from an expected belief; the text now says so.
+  - Limitations now note that the second A-probe leaves task-1 value at 0.8, so the comparison is at a matched probe budget, not between cost-optimal plans.
+All other numbers checked against results.json (0.8, 0.85 channels; 0.7/0.6 net; 1.0945/0.679 entropy; 1.282/1.6161 FR length; 0.0/2.4429 min separation; 0.5/0.85/0.35 transfer; 0.65/0.825 family; 3.14 quotient distance). Grid-artifact audit: all quantities are exact enumerations over observation sequences; no threshold or optimum is read off a grid. results.json changed only by the three added curvature fields.
+Figures: titles replaced (World-states and the two task partitions; Task-1 value versus number of A-probes; Task-1 value, entropy, and path length; RDM, reward-only policy; RDM, competent-contact policy; Zero-shot task-2 value; Expected value over the two-task family).
+
 ## 2026-07-04 — initial full build
 
 Scope: first complete build from the seed chat. Wrote the simulation, the paper, and all provenance docs; brought the paper to a clean `check => PASS`.

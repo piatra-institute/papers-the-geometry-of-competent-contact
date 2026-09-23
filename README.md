@@ -1,6 +1,8 @@
 # The Geometry of Competent Contact
 
-Reinforcement learning scores a policy by a scalar, the expected return $J(\pi)=\mathbb{E}[R]$. This paper argues that an agent's competent contact with its world is not that scalar but the geometry of how its actions transform its belief over hidden world-states, an object living on the probability simplex under the Fisher-Rao metric that Chentsov's theorem singles out. The central result is a quotient: if reward depends on the world only through a partition $g$, the expected return depends on the belief only through its pushforward $g_\ast b$, so two beliefs at the maximal Fisher-Rao distance can be reward-identical, and the return is blind to everything the belief resolves within a reward-class. On a small active-perception POMDP a reward-only policy and a competent-contact policy attain the identical single-task return while leaving beliefs of very different geometry, and the geometry the return discarded is exactly what lets the competent agent transfer zero-shot to a task the reward never mentioned.
+What a Scalar Return Cannot See in an Agent's Grip on the World.
+
+Reinforcement learning scores a policy by a single number, the expected return $J(\pi)=\mathbb{E}[R]$, and treats everything an agent does as a means to that scalar. In competent action, such as a hand turning a cup to read its shape or a robot tapping a surface to tell metal from plastic, what improves is the agent's grip on the world: the way its uncertainty about hidden states collapses into task-relevant structure. The agent's belief over world-states is a sufficient statistic for control and lies on the probability simplex, where Chentsov's theorem singles out the Fisher-Rao metric, so the movement of belief has a determined geometry. Competent contact is measured on that geometry by the contraction of uncertainty, the Fisher-Rao length of the belief trajectory, and the separation the terminal belief keeps between world-states. If reward depends on the world only through a partition $g$, the expected return depends on the belief only through its pushforward $g_\ast b$, so two beliefs at the maximal Fisher-Rao distance $\pi$ can be reward-identical. In an exactly solvable active-perception POMDP, a reward-only policy and a competent-contact policy attain the same single-task return of 0.8 but leave terminal entropies of 1.09 and 0.68 nats; world-states differing only in the reward-irrelevant attribute collapse to Fisher-Rao distance 0.0 under the reward-only policy, while the competent policy keeps all six at least 2.44 apart. On a second task the first reward never mentioned, the reward-only agent scores at chance, 0.5, and the competent agent 0.85, a gap of 0.35 invisible to the single-task return.
 
 ## Contents
 
@@ -23,8 +25,6 @@ Deterministic: expectations are computed by enumerating observation outcomes wit
 uv run build.py          # -> paper/PAPER.pdf  (vendored canonical recipe)
 ```
 
-Requires `pandoc` and `xelatex` on PATH. From the workspace you can also run
-`papers build the-geometry-of-competent-contact`.
+Requires `pandoc` and `xelatex` on PATH. From the workspace you can also run `papers build the-geometry-of-competent-contact`.
 
-Part of [piatra-papers](https://github.com/piatra-institute). See the workspace
-docs for the research and writing pipelines.
+Part of [piatra-papers](https://github.com/piatra-institute). See the workspace docs for the research and writing pipelines.

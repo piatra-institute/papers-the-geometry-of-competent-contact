@@ -284,6 +284,12 @@ def study_manifold():
         "curvature_mean": round(float(ks.mean()), 4),
         "curvature_expected": 0.25,
         "curvature_max_abs_dev_from_quarter": round(float(np.abs(ks - 0.25).max()), 4),
+        # unrounded: the Brioschi routine uses central finite differences
+        # (h = 1e-4), so agreement is to finite-difference error, not machine
+        # precision; the 4-decimal field above rounds this to 0.0.
+        "curvature_max_abs_dev_unrounded": float(f"{np.abs(ks - 0.25).max():.2e}"),
+        "curvature_grid_points": int(ks.size),
+        "check_curvature_within_1e-5": bool(np.abs(ks - 0.25).max() < 1e-5),
         "quotient_fr_distance": round(d_quotient, 4),
         "quotient_value_task1_b00": round(value_task1(b00), 4),
         "quotient_value_task1_b01": round(value_task1(b01), 4),

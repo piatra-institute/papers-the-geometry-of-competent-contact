@@ -57,8 +57,9 @@ def plot_manifold(results, path):
                  arrowprops=dict(arrowstyle="<->", color=WARM, lw=1.6))
     axL.text(0.12, 0.5, f"$d_{{FR}}={m['r_quotient_fr_distance']}$\n"
              f"same task-1 value {m['quotient_value_task1_b00']}\n"
-             f"opposite on task 2", ha="left", va="center", fontsize=7.5, color=WARM)
-    axL.set_title("Two cross-cutting quotients of one world", fontsize=10, color=INK)
+             f"opposite on task 2", ha="left", va="center", fontsize=7.5, color=WARM,
+             bbox=dict(facecolor="white", alpha=0.9, edgecolor="none", pad=1.5), zorder=6)
+    axL.set_title("World-states and the two task partitions", fontsize=10, color=INK)
 
     # --- right: task-1 value vs A-probes; B-probe adds nothing ---
     v1 = pv["value_task1_vs_k_Aprobes"]
@@ -76,7 +77,7 @@ def plot_manifold(results, path):
     axR.set_ylabel("Bayes-optimal task-1 value", fontsize=9)
     axR.set_xticks(ks)
     axR.set_ylim(0.3, 1.02)
-    axR.set_title("Reward moves only with A-probes", fontsize=10, color=INK)
+    axR.set_title("Task-1 value versus number of A-probes", fontsize=10, color=INK)
     axR.legend(fontsize=7.5, frameon=False, loc="lower right")
     _bare(axR)
 
@@ -113,7 +114,7 @@ def plot_policies(results, path):
         axL.text(xi - w / 2, a + 0.02, f"{a}", ha="center", fontsize=7.5, color=INK)
         axL.text(xi + w / 2, b + 0.02, f"{b}", ha="center", fontsize=7.5, color=INK)
     axL.set_xticks(x); axL.set_xticklabels(groups, fontsize=8.5)
-    axL.set_title("Equal task-1 return, different geometry", fontsize=10, color=INK)
+    axL.set_title("Task-1 value, entropy, and path length", fontsize=10, color=INK)
     axL.legend(fontsize=8, frameon=False, loc="upper left")
     _bare(axL)
 
@@ -123,8 +124,8 @@ def plot_policies(results, path):
     vmax = max(Mro.max(), Mco.max())
     labels = [f"$w_{{{i}}}$" for i in range(N)]
     for ax, M, title, mn in [
-        (axs[1], Mro, f"reward-only: B-twins collapse\n(min sep {po['reward_only_min_separation']})", po["reward_only_min_separation"]),
-        (axs[2], Mco, f"competent: all six separated\n(min sep {po['competent_min_separation']})", po["competent_min_separation"]),
+        (axs[1], Mro, f"RDM, reward-only policy\n(min sep {po['reward_only_min_separation']})", po["reward_only_min_separation"]),
+        (axs[2], Mco, f"RDM, competent-contact policy\n(min sep {po['competent_min_separation']})", po["competent_min_separation"]),
     ]:
         im = ax.imshow(M, cmap="magma", vmin=0, vmax=vmax)
         ax.set_xticks(range(N)); ax.set_xticklabels(labels, fontsize=7)
@@ -148,14 +149,14 @@ def plot_transfer(results, path):
     vals = [tr["reward_only_zeroshot_task2"], tr["competent_zeroshot_task2"]]
     bars = axL.bar(names, vals, color=[WARM, COOL], width=0.5)
     axL.axhline(tr["chance_task2"], color=MUTED, ls=(0, (4, 3)), lw=1.2)
-    axL.text(1.35, tr["chance_task2"] + 0.01, f"chance {tr['chance_task2']}",
-             fontsize=8, color=MUTED, ha="right")
+    axL.text(0.5, tr["chance_task2"] + 0.015, f"chance {tr['chance_task2']}",
+             fontsize=8, color=MUTED, ha="center")
     for b, v in zip(bars, vals):
         axL.text(b.get_x() + b.get_width() / 2, v + 0.01, f"{v}",
                  ha="center", fontsize=9, color=INK)
     axL.set_ylabel("zero-shot task-2 value", fontsize=9)
     axL.set_ylim(0, 1.02)
-    axL.set_title(f"Transfer gap {tr['transfer_gap']}: the discarded within-class structure",
+    axL.set_title(f"Zero-shot task-2 value (gap {tr['transfer_gap']})",
                   fontsize=9.5, color=INK)
     _bare(axL)
 
@@ -168,7 +169,7 @@ def plot_transfer(results, path):
                  ha="center", fontsize=9, color=INK)
     axR.set_ylabel("expected value, task drawn from {A, B}", fontsize=9)
     axR.set_ylim(0, 1.02)
-    axR.set_title("Competence over the task family", fontsize=9.5, color=INK)
+    axR.set_title("Expected value over the two-task family", fontsize=9.5, color=INK)
     _bare(axR)
 
     fig.tight_layout()
