@@ -464,6 +464,8 @@ def study_transfer():
 
 def run():
     return {
+        "params": {"a_probe_accuracy": Q_A, "b_probe_accuracy": Q_B,
+                   "probe_cost": PROBE_COST},
         "manifold": study_manifold(),
         "probe_value": study_probe_value(),
         "policies": study_policies(),

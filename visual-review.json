@@ -1,5 +1,5 @@
 {
-  "pdf_sha256": "e004458b8d7ad4ab64d818da46cf98f4ea2cae7c05f1360361f22c3a29d4bd78",
+  "pdf_sha256": "7053c516798a615856710cebf90ee321e05054e3e9d4277206a40d2d54c31296",
   "page_count": 10,
   "pages_inspected": [
     1,
@@ -14,5 +14,5 @@
     10
   ],
   "all_pages_inspected": true,
-  "notes": "All 10 pages inspected after the prose revision; figure panel titles replaced with descriptive ones, the d_FR annotation given a white background so it no longer overprints the w0/w1 cells, and the 'chance 0.5' label moved off the competent bar. Metadata-only rebuild: the web blurb in metadata.yaml, a hashed build input, changed, so the PDF was re-rendered (da58c58f7742 to e004458b8d7a); the rendered text is byte-for-byte identical and no page was re-inspected."
+  "notes": "All 10 pages inspected after the migration; citations (including the Chentsov/Ay prefix citation and original dates for Merleau-Ponty, Chentsov and Uexk\u00fcll) and the citeproc reference list render correctly; no unresolved citation keys; figures unchanged. Metadata-only rebuild: the web blurb in metadata.yaml, a hashed build input, changed, so the PDF was re-rendered (2bf1e67bcdf9 to 7053c516798a); the rendered text is byte-for-byte identical and no page was re-inspected."
 }

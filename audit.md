@@ -2,6 +2,17 @@
 
 Dated log of editorial passes and verification runs. Newest first. See the workspace docs (run `papers docs`): writing-pipeline.md §7.
 
+## 2026-09-23 — structured-evidence migration
+
+Structured-evidence migration (references and claims).
+- references.yaml: 23 CSL entries. 12 matched in Crossref; 6 completed by hand from DOI records (amari2000, chentsov1982, cover2006, dreyfus2002, klyubin2005, tishby2011); 5 entered by hand without DOIs (gibson1979, merleauponty2012, rao1945, sutton2018, uexkull2010). The legacy reference list is replaced by the citeproc-rendered list (Chicago author-date). The grouped citation "(Chentsov, 1982; the extension beyond finite sample spaces is Ay, Jost, Lê, and Schwachhöfer, 2017)" became "[@chentsov1982; the extension beyond finite sample spaces is @ay2017]".
+- Bibliographic corrections: kriegeskorte2008 Crossref record carries a single author; Kriegeskorte, Mur and Bandettini restored from Europe PMC. ay2017 Crossref series volume "34" replaced by the legacy series statement (3. Folge, 64). No prose or numerical corrections.
+- Simulation: run() now also writes a params block (a_probe_accuracy 0.8, b_probe_accuracy 0.85, probe_cost 0.05) from the existing module constants so the channel accuracies bind; all other values unchanged, figures byte-identical.
+- claims.yaml: 65 claims (53 computation, 6 source, 3 interpretation, 2 assumption, 1 definition). Computation claims bind every model number in the abstract, body, captions, limitations and conclusion (including the curvature check 0.25, 36 points, 6.0e-6) to simulation/output/results.json under run belief. Source claims verified against abstracts: Lindley information measure; Itti and Baldi Bayesian surprise; O'Regan and Noë sensorimotor contingencies; Klyubin et al. empowerment; Friston et al. epistemic value; Blackwell comparison of experiments.
+- Not verified, not bound: Åström and Kaelbling et al. belief sufficiency (no abstract retrieved); Rao 1945 and Chentsov uniqueness; Gibson, Merleau-Ponty, Dreyfus "maximal grip", Uexküll Umwelt; Gottlieb et al.; Kriegeskorte RDM papers; Tishby and Polani; Sutton and Barto; Shannon; Cover and Thomas; Amari and Nagaoka.
+- Execution receipt: verification/belief.json (uv run python run_all.py).
+- metadata claims_target: results.json -> claim-ledger.
+
 ## 2026-09-23 — prose revision
 
 Prose rewritten against the house standards. Headings made descriptive (Abstract, Introduction, Belief space and the Fisher-Rao metric, Reward as a quotient of belief, Two policies with equal return, Transfer to a second task, Limitations: the agent's hypothesis space, Conclusion). "Rather than" 6 -> 0, "this/the paper" 3 -> 0, "not X but Y" 3 -> 0, negate-pivots 2 -> 0, "worth" 2 -> 0.

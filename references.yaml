@@ -1,0 +1,387 @@
+# CSL references with stable IDs; cite with Pandoc [@id] syntax.
+# Migrated from the legacy inline bibliography. Entries with a DOI were resolved through doi.org
+# content negotiation (CSL-JSON) and checked for year and title; others were matched in Crossref
+# or entered by hand. Provenance per entry is in sources.md.
+references:
+- id: amari2000
+  type: book
+  title: Methods of Information Geometry
+  author:
+  - given: Shun-ichi
+    family: Amari
+  - given: Hiroshi
+    family: Nagaoka
+  translator:
+  - given: Daishi
+    family: Harada
+  collection-title: Translations of Mathematical Monographs
+  collection-number: '191'
+  publisher: American Mathematical Society and Oxford University Press
+  publisher-place: Providence, RI
+  DOI: 10.1090/mmono/191
+  issued:
+    date-parts:
+    - - 2000
+- id: astrom1965
+  type: article-journal
+  title: Optimal control of Markov processes with incomplete state information
+  author:
+  - given: K. J.
+    family: Åström
+  container-title: Journal of Mathematical Analysis and Applications
+  volume: '10'
+  issue: '1'
+  page: 174-205
+  DOI: 10.1016/0022-247x(65)90154-x
+  issued:
+    date-parts:
+    - - 1965
+- id: ay2017
+  type: book
+  title: Information Geometry
+  author:
+  - given: Nihat
+    family: Ay
+  - given: Jürgen
+    family: Jost
+  - given: Hông Vân
+    family: Lê
+  - given: Lorenz
+    family: Schwachhöfer
+  publisher: Springer
+  DOI: 10.1007/978-3-319-56478-4
+  issued:
+    date-parts:
+    - - 2017
+  collection-title: Ergebnisse der Mathematik und ihrer Grenzgebiete, 3. Folge
+  collection-number: '64'
+  publisher-place: Cham
+  language: de
+- id: blackwell1953
+  type: article-journal
+  title: Equivalent Comparisons of Experiments
+  author:
+  - given: David
+    family: Blackwell
+  container-title: The Annals of Mathematical Statistics
+  volume: '24'
+  issue: '2'
+  page: 265-272
+  DOI: 10.1214/aoms/1177729032
+  issued:
+    date-parts:
+    - - 1953
+- id: chentsov1982
+  type: book
+  title: Statistical Decision Rules and Optimal Inference
+  author:
+  - given: N. N.
+    family: Chentsov
+  collection-title: Translations of Mathematical Monographs
+  collection-number: '53'
+  publisher: American Mathematical Society
+  publisher-place: Providence, RI
+  DOI: 10.1090/mmono/053
+  original-date:
+    date-parts:
+    - - 1972
+  issued:
+    date-parts:
+    - - 1982
+- id: cover2006
+  type: book
+  title: Elements of Information Theory
+  edition: '2'
+  author:
+  - given: Thomas M.
+    family: Cover
+  - given: Joy A.
+    family: Thomas
+  publisher: Wiley-Interscience
+  publisher-place: Hoboken, NJ
+  DOI: 10.1002/047174882X
+  issued:
+    date-parts:
+    - - 2006
+- id: dreyfus2002
+  type: article-journal
+  title: 'Intelligence without Representation: Merleau-Ponty’s Critique of Mental Representation'
+  author:
+  - given: Hubert L.
+    family: Dreyfus
+  container-title: Phenomenology and the Cognitive Sciences
+  volume: '1'
+  issue: '4'
+  page: 367-383
+  DOI: 10.1023/A:1021351606209
+  issued:
+    date-parts:
+    - - 2002
+- id: friston2015
+  type: article-journal
+  title: Active inference and epistemic value
+  author:
+  - given: Karl
+    family: Friston
+  - given: Francesco
+    family: Rigoli
+  - given: Dimitri
+    family: Ognibene
+  - given: Christoph
+    family: Mathys
+  - given: Thomas
+    family: Fitzgerald
+  - given: Giovanni
+    family: Pezzulo
+  container-title: Cognitive Neuroscience
+  volume: '6'
+  issue: '4'
+  page: 187-214
+  DOI: 10.1080/17588928.2015.1020053
+  issued:
+    date-parts:
+    - - 2015
+- id: gibson1979
+  type: book
+  title: The Ecological Approach to Visual Perception
+  author:
+  - given: James J.
+    family: Gibson
+  publisher: Houghton Mifflin
+  publisher-place: Boston
+  issued:
+    date-parts:
+    - - 1979
+- id: gottlieb2013
+  type: article-journal
+  title: 'Information-seeking, curiosity, and attention: computational and neural mechanisms'
+  author:
+  - given: Jacqueline
+    family: Gottlieb
+  - given: Pierre-Yves
+    family: Oudeyer
+  - given: Manuel
+    family: Lopes
+  - given: Adrien
+    family: Baranes
+  container-title: Trends in Cognitive Sciences
+  volume: '17'
+  issue: '11'
+  page: 585-593
+  DOI: 10.1016/j.tics.2013.09.001
+  issued:
+    date-parts:
+    - - 2013
+- id: itti2009
+  type: article-journal
+  title: Bayesian surprise attracts human attention
+  author:
+  - given: Laurent
+    family: Itti
+  - given: Pierre
+    family: Baldi
+  container-title: Vision Research
+  volume: '49'
+  issue: '10'
+  page: 1295-1306
+  DOI: 10.1016/j.visres.2008.09.007
+  issued:
+    date-parts:
+    - - 2009
+- id: kaelbling1998
+  type: article-journal
+  title: Planning and acting in partially observable stochastic domains
+  author:
+  - given: Leslie Pack
+    family: Kaelbling
+  - given: Michael L.
+    family: Littman
+  - given: Anthony R.
+    family: Cassandra
+  container-title: Artificial Intelligence
+  volume: '101'
+  issue: 1-2
+  page: 99-134
+  DOI: 10.1016/s0004-3702(98)00023-x
+  issued:
+    date-parts:
+    - - 1998
+- id: klyubin2005
+  type: paper-conference
+  title: 'Empowerment: A Universal Agent-Centric Measure of Control'
+  author:
+  - given: Alexander S.
+    family: Klyubin
+  - given: Daniel
+    family: Polani
+  - given: Chrystopher L.
+    family: Nehaniv
+  container-title: Proceedings of the 2005 IEEE Congress on Evolutionary Computation
+  volume: '1'
+  page: 128-135
+  publisher: IEEE
+  DOI: 10.1109/CEC.2005.1554676
+  issued:
+    date-parts:
+    - - 2005
+- id: kriegeskorte2008
+  type: article-journal
+  title: 'Representational Similarity Analysis: Connecting the Branches of Systems Neuroscience'
+  author:
+  - given: Nikolaus
+    family: Kriegeskorte
+  - given: Marieke
+    family: Mur
+  - given: Peter A.
+    family: Bandettini
+  container-title: Frontiers in Systems Neuroscience
+  DOI: 10.3389/neuro.06.004.2008
+  issued:
+    date-parts:
+    - - 2008
+  volume: '2'
+  page: '4'
+- id: kriegeskorte2013
+  type: article-journal
+  title: 'Representational geometry: integrating cognition, computation, and the brain'
+  author:
+  - given: Nikolaus
+    family: Kriegeskorte
+  - given: Rogier A.
+    family: Kievit
+  container-title: Trends in Cognitive Sciences
+  volume: '17'
+  issue: '8'
+  page: 401-412
+  DOI: 10.1016/j.tics.2013.06.007
+  issued:
+    date-parts:
+    - - 2013
+- id: lindley1956
+  type: article-journal
+  title: On a Measure of the Information Provided by an Experiment
+  author:
+  - given: D. V.
+    family: Lindley
+  container-title: The Annals of Mathematical Statistics
+  volume: '27'
+  issue: '4'
+  page: 986-1005
+  DOI: 10.1214/aoms/1177728069
+  issued:
+    date-parts:
+    - - 1956
+- id: merleauponty2012
+  type: book
+  title: Phenomenology of Perception
+  author:
+  - given: Maurice
+    family: Merleau-Ponty
+  translator:
+  - given: Donald A.
+    family: Landes
+  publisher: Routledge
+  publisher-place: London
+  original-date:
+    date-parts:
+    - - 1945
+  issued:
+    date-parts:
+    - - 2012
+- id: oregan2001
+  type: article-journal
+  title: A sensorimotor account of vision and visual consciousness
+  author:
+  - given: J. Kevin
+    family: O'Regan
+  - given: Alva
+    family: Noë
+  container-title: Behavioral and Brain Sciences
+  volume: '24'
+  issue: '5'
+  page: 939-973
+  DOI: 10.1017/s0140525x01000115
+  issued:
+    date-parts:
+    - - 2001
+- id: rao1945
+  type: article-journal
+  title: Information and the Accuracy Attainable in the Estimation of Statistical Parameters
+  author:
+  - given: C. Radhakrishna
+    family: Rao
+  container-title: Bulletin of the Calcutta Mathematical Society
+  volume: '37'
+  page: 81-91
+  issued:
+    date-parts:
+    - - 1945
+- id: shannon1948
+  type: article-journal
+  title: A Mathematical Theory of Communication
+  author:
+  - given: C. E.
+    family: Shannon
+  container-title: Bell System Technical Journal
+  volume: '27'
+  issue: '3'
+  page: 379-423
+  DOI: 10.1002/j.1538-7305.1948.tb01338.x
+  issued:
+    date-parts:
+    - - 1948
+- id: sutton2018
+  type: book
+  title: 'Reinforcement Learning: An Introduction'
+  edition: '2'
+  author:
+  - given: Richard S.
+    family: Sutton
+  - given: Andrew G.
+    family: Barto
+  publisher: MIT Press
+  publisher-place: Cambridge, MA
+  issued:
+    date-parts:
+    - - 2018
+- id: tishby2011
+  type: chapter
+  title: Information Theory of Decisions and Actions
+  author:
+  - given: Naftali
+    family: Tishby
+  - given: Daniel
+    family: Polani
+  editor:
+  - given: Vassilis
+    family: Cutsuridis
+  - given: Amir
+    family: Hussain
+  - given: John G.
+    family: Taylor
+  container-title: 'Perception-Action Cycle: Models, Architectures, and Hardware'
+  page: 601-636
+  publisher: Springer
+  publisher-place: New York
+  DOI: 10.1007/978-1-4419-1452-1_19
+  issued:
+    date-parts:
+    - - 2011
+- id: uexkull2010
+  type: book
+  title: A Foray into the Worlds of Animals and Humans
+  author:
+  - given: Jakob
+    family: Uexküll
+    dropping-particle: von
+  translator:
+  - given: Joseph D.
+    family: O’Neil
+  publisher: University of Minnesota Press
+  publisher-place: Minneapolis
+  original-date:
+    date-parts:
+    - - 1934
+  issued:
+    date-parts:
+    - - 2010

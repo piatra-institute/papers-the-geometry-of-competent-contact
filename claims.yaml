@@ -1,0 +1,796 @@
+schema: 1
+coverage: reviewed
+reviewed_manuscript_sha256: 76e5e5487ad18af2846060424c09ed2d409a09a8852c8784f816ca4c201b139f
+claims:
+- id: abstract-task1-return
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent/exp_value_task1
+    reported: '0.8'
+    decimals: 1
+    units: expected task-1 value
+    conditions: exact enumeration; both policies with 2 A-probes
+  passage: In an exactly solvable active-perception POMDP, a reward-only policy and a competent-contact
+    policy attain the same single-task return of 0.8 but leave terminal entropies of 1.09 and 0.68 nats;
+    world-states differing only in the reward-irrelevant attribute collapse to Fisher-Rao distance 0.0
+    under the reward-only policy, while the competent policy keeps all six at least 2.44 apart.
+- id: abstract-entropy-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/exp_entropy
+    reported: '1.09'
+    decimals: 2
+    units: nats
+    conditions: reward-only policy terminal belief
+  passage: In an exactly solvable active-perception POMDP, a reward-only policy and a competent-contact
+    policy attain the same single-task return of 0.8 but leave terminal entropies of 1.09 and 0.68 nats;
+    world-states differing only in the reward-irrelevant attribute collapse to Fisher-Rao distance 0.0
+    under the reward-only policy, while the competent policy keeps all six at least 2.44 apart.
+- id: abstract-entropy-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent/exp_entropy
+    reported: '0.68'
+    decimals: 2
+    units: nats
+    conditions: competent policy terminal belief
+  passage: In an exactly solvable active-perception POMDP, a reward-only policy and a competent-contact
+    policy attain the same single-task return of 0.8 but leave terminal entropies of 1.09 and 0.68 nats;
+    world-states differing only in the reward-irrelevant attribute collapse to Fisher-Rao distance 0.0
+    under the reward-only policy, while the competent policy keeps all six at least 2.44 apart.
+- id: abstract-collapse
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only_Btwin_separation
+    reported: '0.0'
+    decimals: 1
+    units: Fisher-Rao distance
+    conditions: most-likely-reading terminal beliefs
+  passage: In an exactly solvable active-perception POMDP, a reward-only policy and a competent-contact
+    policy attain the same single-task return of 0.8 but leave terminal entropies of 1.09 and 0.68 nats;
+    world-states differing only in the reward-irrelevant attribute collapse to Fisher-Rao distance 0.0
+    under the reward-only policy, while the competent policy keeps all six at least 2.44 apart.
+- id: abstract-min-sep
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent_min_separation
+    reported: '2.44'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: minimum over the six world-states
+  passage: In an exactly solvable active-perception POMDP, a reward-only policy and a competent-contact
+    policy attain the same single-task return of 0.8 but leave terminal entropies of 1.09 and 0.68 nats;
+    world-states differing only in the reward-irrelevant attribute collapse to Fisher-Rao distance 0.0
+    under the reward-only policy, while the competent policy keeps all six at least 2.44 apart.
+- id: abstract-transfer-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/reward_only_zeroshot_task2
+    reported: '0.5'
+    decimals: 1
+    units: zero-shot task-2 value
+    conditions: no further probing
+  passage: On a second task the first reward never mentioned, the reward-only agent scores at chance,
+    0.5, and the competent agent 0.85, a gap of 0.35 invisible to the single-task return.
+- id: abstract-transfer-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/competent_zeroshot_task2
+    reported: '0.85'
+    decimals: 2
+    units: zero-shot task-2 value
+    conditions: no further probing
+  passage: On a second task the first reward never mentioned, the reward-only agent scores at chance,
+    0.5, and the competent agent 0.85, a gap of 0.35 invisible to the single-task return.
+- id: abstract-transfer-gap
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/transfer_gap
+    reported: '0.35'
+    decimals: 2
+    units: task-2 value difference
+    conditions: competent minus reward-only
+  passage: On a second task the first reward never mentioned, the reward-only agent scores at chance,
+    0.5, and the competent agent 0.85, a gap of 0.35 invisible to the single-task return.
+- id: curvature-points
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/curvature_grid_points
+    reported: '36'
+    decimals: 0
+    units: grid points
+    conditions: three-state marginal simplex
+  passage: As a check on the numerical machinery, a curvature routine built only from the metric components
+    and the Brioschi formula, with central finite differences, is applied to the Fisher metric at 36 grid
+    points across a three-state marginal simplex; it returns 0.25 with a maximum deviation of $6.0 \times
+    10^{-6}$, the finite-difference error.
+- id: curvature-mean
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/curvature_mean
+    reported: '0.25'
+    decimals: 2
+    units: Gaussian curvature
+    conditions: Brioschi formula with central finite differences
+  passage: As a check on the numerical machinery, a curvature routine built only from the metric components
+    and the Brioschi formula, with central finite differences, is applied to the Fisher metric at 36 grid
+    points across a three-state marginal simplex; it returns 0.25 with a maximum deviation of $6.0 \times
+    10^{-6}$, the finite-difference error.
+- id: curvature-dev
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/curvature_max_abs_dev_unrounded
+    reported: 6.0 \times 10^{-6}
+    significant_digits: 2
+    units: maximum absolute deviation from 1/4
+    conditions: 36 grid points
+  passage: As a check on the numerical machinery, a curvature routine built only from the metric components
+    and the Brioschi formula, with central finite differences, is applied to the Fisher metric at 36 grid
+    points across a three-state marginal simplex; it returns 0.25 with a maximum deviation of $6.0 \times
+    10^{-6}$, the finite-difference error.
+- id: quotient-value
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/quotient_value_task1_b00
+    reported: '1.0'
+    decimals: 1
+    units: task-1 Bayes value
+    conditions: belief concentrated on (0
+  passage: The two beliefs concentrated on $(A,B)=(0,0)$ and on $(0,1)$ have the same $A$-marginal, a
+    point mass at $A=0$, so both have task-1 value 1.0 and support the same optimal decision.
+- id: quotient-distance
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/quotient_fr_distance
+    reported: '3.14'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: disjoint point masses; diameter pi
+  passage: Their supports are disjoint, so they lie at Fisher-Rao distance 3.14, the diameter of the simplex.
+- id: quotient-cross
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/quotient_task2_cross_value
+    reported: '0.0'
+    decimals: 1
+    units: task-2 value
+    conditions: decision optimal under (0
+  passage: 'On a task about $B$ they prescribe opposite decisions: the decision optimal under the first
+    belief scores 0.0 in the world of the second, the entire stake of that task.'
+- id: caption1-distance
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/quotient_fr_distance
+    reported: '3.14'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: as in the body
+  passage: The beliefs at $w_0=(0,0)$ and $w_1=(0,1)$ lie at Fisher-Rao distance 3.14, the diameter, share
+    the task-1 value 1.0, and take opposite task-2 decisions.
+- id: caption1-value
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /manifold/quotient_value_task1_b01
+    reported: '1.0'
+    decimals: 1
+    units: task-1 value
+    conditions: as in the body
+  passage: The beliefs at $w_0=(0,0)$ and $w_1=(0,1)$ lie at Fisher-Rao distance 3.14, the diameter, share
+    the task-1 value 1.0, and take opposite task-2 decisions.
+- id: caption1-k0
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /probe_value/value_task1_vs_k_Aprobes/k0
+    reported: '0.3333'
+    decimals: 4
+    units: task-1 value
+    conditions: prior
+  passage: 'Right: Bayes-optimal task-1 value against the number of $A$-probes, 0.3333 at the prior, 0.8
+    after one and after two probes, and 0.912 after three; a $B$-probe added after two $A$-probes leaves
+    the task-1 value unchanged, a marginal contribution of 0.0, because $B$ lies in the quotient the reward
+    discards.](../simulation/output/figures/manifold.png){width=100%}'
+- id: caption1-k2
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /probe_value/value_task1_vs_k_Aprobes/k2
+    reported: '0.8'
+    decimals: 1
+    units: task-1 value
+    conditions: one and two A-probes (k1 = k2 = 0.8)
+  passage: 'Right: Bayes-optimal task-1 value against the number of $A$-probes, 0.3333 at the prior, 0.8
+    after one and after two probes, and 0.912 after three; a $B$-probe added after two $A$-probes leaves
+    the task-1 value unchanged, a marginal contribution of 0.0, because $B$ lies in the quotient the reward
+    discards.](../simulation/output/figures/manifold.png){width=100%}'
+- id: caption1-k3
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /probe_value/value_task1_vs_k_Aprobes/k3
+    reported: '0.912'
+    decimals: 3
+    units: task-1 value
+    conditions: three A-probes
+  passage: 'Right: Bayes-optimal task-1 value against the number of $A$-probes, 0.3333 at the prior, 0.8
+    after one and after two probes, and 0.912 after three; a $B$-probe added after two $A$-probes leaves
+    the task-1 value unchanged, a marginal contribution of 0.0, because $B$ lies in the quotient the reward
+    discards.](../simulation/output/figures/manifold.png){width=100%}'
+- id: caption1-bprobe
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /probe_value/value_task1_marginal_of_Bprobe
+    reported: '0.0'
+    decimals: 1
+    units: marginal task-1 value of a B-probe
+    conditions: after two A-probes
+  passage: 'Right: Bayes-optimal task-1 value against the number of $A$-probes, 0.3333 at the prior, 0.8
+    after one and after two probes, and 0.912 after three; a $B$-probe added after two $A$-probes leaves
+    the task-1 value unchanged, a marginal contribution of 0.0, because $B$ lies in the quotient the reward
+    discards.](../simulation/output/figures/manifold.png){width=100%}'
+- id: channel-a
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /params/a_probe_accuracy
+    reported: '0.8'
+    decimals: 1
+    units: probability the A-probe reports A correctly
+    conditions: confusion channel
+  passage: 'A probe is a sensing action with a fixed observation channel, and the model has two: an $A$-probe
+    that reports $A$ through a confusion channel correct with probability 0.8, and a $B$-probe that reports
+    $B$ correctly with probability 0.85.'
+- id: channel-b
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /params/b_probe_accuracy
+    reported: '0.85'
+    decimals: 2
+    units: probability the B-probe reports B correctly
+    conditions: confusion channel
+  passage: 'A probe is a sensing action with a fixed observation channel, and the model has two: an $A$-probe
+    that reports $A$ through a confusion channel correct with probability 0.8, and a $B$-probe that reports
+    $B$ correctly with probability 0.85.'
+- id: bprobe-marginal
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/voi_task1_first_Bprobe
+    reported: '0.0'
+    decimals: 1
+    units: task-1 value of information of a B-probe
+    conditions: exact
+  passage: 'The reward-only policy maximizes task-1 return and faces an asymmetry: an $A$-probe can raise
+    the task-1 value, while a $B$-probe leaves it unchanged, a marginal task-1 value of 0.0, because $B$
+    lies in the quotient the reward cannot read.'
+- id: probe-budget
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/n_probes
+    reported: '2'
+    decimals: 0
+    units: probes
+    conditions: reward-only policy (competent adds 2 B-probes)
+  passage: To isolate this difference, both policies receive the same budget of 2 probes on $A$, and the
+    competent policy additionally spends 2 probes on $B$.
+- id: equal-return
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/exp_value_task1
+    reported: '0.8'
+    decimals: 1
+    units: expected task-1 value
+    conditions: reward-only policy
+  passage: $B$-probes do not affect the $A$-marginal, so both policies attain the same expected task-1
+    value of 0.8, a gap of 0.0, and a theory that scores policies by single-task return ranks them as
+    equivalent.
+- id: equal-return-gap
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/task1_return_gap
+    reported: '0.0'
+    decimals: 1
+    units: task-1 value difference
+    conditions: competent minus reward-only
+  passage: $B$-probes do not affect the $A$-marginal, so both policies attain the same expected task-1
+    value of 0.8, a gap of 0.0, and a theory that scores policies by single-task return ranks them as
+    equivalent.
+- id: probe-cost
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /params/probe_cost
+    reported: '0.05'
+    decimals: 2
+    units: reward units per probe
+    conditions: net return
+  passage: 'With a per-probe cost of 0.05 included in the return, the ranking favours the less competent
+    policy: the reward-only policy nets 0.7 on task 1 and the competent policy 0.6, because the competent
+    policy pays for 2 probes that task 1 does not reward.'
+- id: net-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only_net_task1
+    reported: '0.7'
+    decimals: 1
+    units: net task-1 value
+    conditions: 2 probes
+  passage: 'With a per-probe cost of 0.05 included in the return, the ranking favours the less competent
+    policy: the reward-only policy nets 0.7 on task 1 and the competent policy 0.6, because the competent
+    policy pays for 2 probes that task 1 does not reward.'
+- id: net-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent_net_task1
+    reported: '0.6'
+    decimals: 1
+    units: net task-1 value
+    conditions: 4 probes
+  passage: 'With a per-probe cost of 0.05 included in the return, the ranking favours the less competent
+    policy: the reward-only policy nets 0.7 on task 1 and the competent policy 0.6, because the competent
+    policy pays for 2 probes that task 1 does not reward.'
+- id: entropy-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/exp_entropy
+    reported: '1.09'
+    decimals: 2
+    units: nats
+    conditions: expected over observation outcomes
+  passage: The reward-only policy leaves a terminal belief with Shannon entropy 1.09 nats, most of it
+    the unresolved uncertainty about $B$; the competent policy leaves 0.68 nats, with the belief driven
+    further toward a vertex.
+- id: entropy-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent/exp_entropy
+    reported: '0.68'
+    decimals: 2
+    units: nats
+    conditions: expected over observation outcomes
+  passage: The reward-only policy leaves a terminal belief with Shannon entropy 1.09 nats, most of it
+    the unresolved uncertainty about $B$; the competent policy leaves 0.68 nats, with the belief driven
+    further toward a vertex.
+- id: fr-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent/exp_fr_from_prior
+    reported: '1.62'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: expected over outcomes
+  passage: The Fisher-Rao length from the prior is 1.62 for the competent belief and 1.28 for the reward-only
+    belief.
+- id: fr-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/exp_fr_from_prior
+    reported: '1.28'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: expected over outcomes
+  passage: The Fisher-Rao length from the prior is 1.62 for the competent belief and 1.28 for the reward-only
+    belief.
+- id: min-sep-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent_min_separation
+    reported: '2.44'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: most-likely-reading terminal beliefs
+  passage: Under the competent policy every pair of world-states remains separated, with minimum separation
+    2.44.
+- id: min-sep-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only_Btwin_separation
+    reported: '0.0'
+    decimals: 1
+    units: Fisher-Rao distance
+    conditions: B-twin pairs
+  passage: Under the reward-only policy, world-states that share $A$ and differ only in $B$ collapse to
+    separation 0.0, because the policy never probed $B$; its representation contains none of the reward-irrelevant
+    distinctions of the world.
+- id: caption2-value
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/r_co_value_task1
+    reported: '0.8'
+    decimals: 1
+    units: task-1 value
+    conditions: both policies
+  passage: 'Left: the reward-only and competent-contact policies attain the same task-1 value 0.8, while
+    the reward-only policy leaves higher terminal entropy (1.0945 against 0.679 nats) and a shorter Fisher-Rao
+    path from the prior (1.282 against 1.6161).'
+- id: caption2-entropy-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/exp_entropy
+    reported: '1.0945'
+    decimals: 4
+    units: nats
+    conditions: reward-only
+  passage: 'Left: the reward-only and competent-contact policies attain the same task-1 value 0.8, while
+    the reward-only policy leaves higher terminal entropy (1.0945 against 0.679 nats) and a shorter Fisher-Rao
+    path from the prior (1.282 against 1.6161).'
+- id: caption2-entropy-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent/exp_entropy
+    reported: '0.679'
+    decimals: 3
+    units: nats
+    conditions: competent
+  passage: 'Left: the reward-only and competent-contact policies attain the same task-1 value 0.8, while
+    the reward-only policy leaves higher terminal entropy (1.0945 against 0.679 nats) and a shorter Fisher-Rao
+    path from the prior (1.282 against 1.6161).'
+- id: caption2-fr-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only/exp_fr_from_prior
+    reported: '1.282'
+    decimals: 3
+    units: Fisher-Rao distance
+    conditions: reward-only
+  passage: 'Left: the reward-only and competent-contact policies attain the same task-1 value 0.8, while
+    the reward-only policy leaves higher terminal entropy (1.0945 against 0.679 nats) and a shorter Fisher-Rao
+    path from the prior (1.282 against 1.6161).'
+- id: caption2-fr-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent/exp_fr_from_prior
+    reported: '1.6161'
+    decimals: 4
+    units: Fisher-Rao distance
+    conditions: competent
+  passage: 'Left: the reward-only and competent-contact policies attain the same task-1 value 0.8, while
+    the reward-only policy leaves higher terminal entropy (1.0945 against 0.679 nats) and a shorter Fisher-Rao
+    path from the prior (1.282 against 1.6161).'
+- id: caption2-ro-min
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/reward_only_min_separation
+    reported: '0.0'
+    decimals: 1
+    units: Fisher-Rao distance
+    conditions: reward-only RDM minimum
+  passage: The reward-only matrix places the three pairs that differ only in $B$ at distance 0.0 (dark
+    diagonal blocks), a minimum separation of 0.0; the competent matrix separates all six states, with
+    minimum 2.4429.](../simulation/output/figures/policies.png){width=100%}
+- id: caption2-co-min
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent_min_separation
+    reported: '2.4429'
+    decimals: 4
+    units: Fisher-Rao distance
+    conditions: competent RDM minimum
+  passage: The reward-only matrix places the three pairs that differ only in $B$ at distance 0.0 (dark
+    diagonal blocks), a minimum separation of 0.0; the competent matrix separates all six states, with
+    minimum 2.4429.](../simulation/output/figures/policies.png){width=100%}
+- id: transfer-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/reward_only_zeroshot_task2
+    reported: '0.5'
+    decimals: 1
+    units: task-2 value
+    conditions: zero-shot
+  passage: The reward-only policy never probed $B$, so its $B$-marginal remains the uniform prior and
+    its best zero-shot task-2 value is 0.5, chance.
+- id: transfer-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/competent_zeroshot_task2
+    reported: '0.85'
+    decimals: 2
+    units: task-2 value
+    conditions: zero-shot
+  passage: The competent policy resolved $B$ to the fidelity of the channel and scores 0.85, a transfer
+    gap of 0.35 equal to the value of the within-class structure the scalar quotient discarded.
+- id: transfer-gap
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/transfer_gap
+    reported: '0.35'
+    decimals: 2
+    units: task-2 value difference
+    conditions: zero-shot
+  passage: The competent policy resolved $B$ to the fidelity of the channel and scores 0.85, a transfer
+    gap of 0.35 equal to the value of the within-class structure the scalar quotient discarded.
+- id: family-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/competent_family_value
+    reported: '0.825'
+    decimals: 3
+    units: expected value
+    conditions: equal mixture of task 1 and task 2
+  passage: Averaged over a task family that draws its reward from either attribute with equal probability,
+    the competent agent's expected value is 0.825 and the reward-only agent's 0.65.
+- id: family-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/reward_only_family_value
+    reported: '0.65'
+    decimals: 2
+    units: expected value
+    conditions: equal mixture
+  passage: Averaged over a task family that draws its reward from either attribute with equal probability,
+    the competent agent's expected value is 0.825 and the reward-only agent's 0.65.
+- id: caption3-left
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/r_transfer_gap
+    reported: '0.35'
+    decimals: 2
+    units: task-2 value difference
+    conditions: zero-shot
+  passage: 'Left: task-2 value with no further probing; the reward-only policy scores 0.5, chance, having
+    never resolved $B$, and the competent policy scores 0.85, a transfer gap of 0.35.'
+- id: caption3-right-co
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/competent_family_value
+    reported: '0.825'
+    decimals: 3
+    units: expected value
+    conditions: equal mixture
+  passage: 'Right: expected value over a task family drawing its reward from either attribute with equal
+    probability, 0.65 for the reward-only policy and 0.825 for the competent policy.](../simulation/output/figures/transfer.png){width=100%}'
+- id: caption3-right-ro
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/reward_only_family_value
+    reported: '0.65'
+    decimals: 2
+    units: expected value
+    conditions: equal mixture
+  passage: 'Right: expected value over a task family drawing its reward from either attribute with equal
+    probability, 0.65 for the reward-only policy and 0.825 for the competent policy.](../simulation/output/figures/transfer.png){width=100%}'
+- id: limitation-second-probe
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /probe_value/value_task1_vs_k_Aprobes/k2
+    reported: '0.8'
+    decimals: 1
+    units: task-1 value
+    conditions: two A-probes
+  passage: Second, the policies were specified by hand to isolate the phenomenon and were not derived
+    as optima; the second $A$-probe, for example, leaves the task-1 value at 0.8, so the comparison is
+    at a matched probe budget and not between cost-optimal plans.
+- id: conclusion-sep
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /policies/competent_min_separation
+    reported: '2.44'
+    decimals: 2
+    units: Fisher-Rao distance
+    conditions: competent
+  passage: In the model, the reward-only and competent-contact policies are tied at a task-1 return of
+    0.8, yet only the competent policy retains the within-class distinctions (minimum Fisher-Rao separation
+    2.44 against 0.0) that raise zero-shot task-2 value from 0.5 to 0.85.
+- id: conclusion-transfer
+  kind: computation
+  evidence:
+    file: simulation/output/results.json
+    run_id: belief
+    pointer: /transfer/competent_zeroshot_task2
+    reported: '0.85'
+    decimals: 2
+    units: task-2 value
+    conditions: zero-shot
+  passage: In the model, the reward-only and competent-contact policies are tied at a task-1 return of
+    0.8, yet only the competent policy retains the within-class distinctions (minimum Fisher-Rao separation
+    2.44 against 0.0) that raise zero-shot task-2 value from 0.5 to 0.85.
+- id: lindley-information
+  kind: source
+  evidence:
+    citation_id: lindley1956
+    locator: Abstract
+    verified: true
+    verification_note: Abstract of DOI 10.1214/aoms/1177728069 introduces a Shannon-derived measure of
+      the information provided by an experiment, relative to a prior, and applies it to experimental design
+      aimed at gaining knowledge.
+  passage: The competent-contact policy chooses probes by expected information gain about the full state
+    $w$, the classical objective of Bayesian experimental design, equal to the expected reduction in the
+    posterior's Shannon entropy [@lindley1956] and to the expected Bayesian surprise, the KL divergence
+    from prior to posterior [@itti2009; @gottlieb2013].
+- id: itti-surprise
+  kind: source
+  evidence:
+    citation_id: itti2009
+    locator: Abstract
+    verified: true
+    verification_note: Europe PMC abstract of DOI 10.1016/j.visres.2008.09.007 defines Bayesian surprise
+      as the difference between posterior and prior beliefs; the KL form is the paper's formal definition
+      (not re-read here).
+  passage: The competent-contact policy chooses probes by expected information gain about the full state
+    $w$, the classical objective of Bayesian experimental design, equal to the expected reduction in the
+    posterior's Shannon entropy [@lindley1956] and to the expected Bayesian surprise, the KL divergence
+    from prior to posterior [@itti2009; @gottlieb2013].
+- id: oregan-sensorimotor
+  kind: source
+  evidence:
+    citation_id: oregan2001
+    locator: Abstract
+    verified: true
+    verification_note: Abstract of DOI 10.1017/S0140525X01000115 proposes that seeing is a way of acting
+      and occurs when the organism masters the laws of sensorimotor contingency.
+  passage: 'O''Regan and Noë made the point operational: to see is to exercise mastery of sensorimotor
+    contingencies, the lawful ways sensory input changes as the agent moves, so that vision is a skill
+    of probing [@oregan2001].'
+- id: klyubin-empowerment
+  kind: source
+  evidence:
+    citation_id: klyubin2005
+    locator: Abstract
+    verified: true
+    verification_note: Abstract of DOI 10.1109/CEC.2005.1554676 defines empowerment as the information-theoretic
+      capacity of an agent's actuation channel, coupling actuators to sensors through the environment.
+  passage: Empowerment is the channel capacity from an agent's actions to its later sensor states, the
+    maximum an agent can inject into its own sensory future, and it rewards control [@klyubin2005; @shannon1948;
+    @cover2006].
+- id: friston-epistemic
+  kind: source
+  evidence:
+    citation_id: friston2015
+    locator: Abstract
+    verified: true
+    verification_note: Abstract of DOI 10.1080/17588928.2015.1020053 decomposes expected free energy into
+      extrinsic and epistemic value, the latter being information gain about the causes of outcomes.
+  passage: 'The epistemic term in active inference is closer: expected free energy scores a policy partly
+    by its expected information gain about hidden states, which is the competent-contact objective expressed
+    in variational form [@friston2015; @tishby2011].'
+- id: blackwell-sufficiency
+  kind: source
+  evidence:
+    citation_id: blackwell1953
+    locator: Abstract
+    verified: true
+    verification_note: Abstract of DOI 10.1214/aoms/1177729032 concerns methods for comparing experiments
+      and introduces comparison in k-decision problems; the usefulness-in-every-decision-problem formulation
+      is the paper's framework.
+  passage: 'Blackwell''s comparison of experiments expresses the same fact in terms of information: one
+    experiment is sufficient for another when it is at least as useful in every decision problem, and
+    an experiment can be sufficient for a particular task while discarding distinctions another task would
+    need [@blackwell1953].'
+- id: quotient-proposition
+  kind: interpretation
+  rationale: The proposition is proved in the text; this sentence states its reading, that return registers
+    only the projection of belief onto the coarsest partition the reward respects.
+  passage: The proposition is elementary.
+- id: competence-definition
+  kind: definition
+  rationale: Stipulates the three geometric measures of competence used throughout (entropy contraction,
+    Fisher-Rao path length, terminal separation).
+  passage: Competent contact is measured on that geometry by the contraction of uncertainty, the Fisher-Rao
+    length of the belief trajectory, and the separation the terminal belief keeps between world-states.
+- id: fisher-rao-choice
+  kind: assumption
+  rationale: Adopts the Fisher-Rao metric on the grounds of Chentsov's uniqueness theorem; the argument
+    depends on invariance under sufficient statistics being the right requirement.
+  passage: Any other measure of distance between beliefs would introduce structure the statistics does
+    not contain, so belief space is equipped with the Fisher-Rao geometry.
+- id: hand-specified-policies
+  kind: assumption
+  rationale: The two policies are constructions at a matched probe budget, not cost-optimal plans; the
+    numerical results are properties of that construction.
+  passage: Second, the policies were specified by hand to isolate the phenomenon and were not derived
+    as optima; the second $A$-probe, for example, leaves the task-1 value at 0.8, so the comparison is
+    at a matched probe budget and not between cost-optimal plans.
+- id: umwelt-bound
+  kind: interpretation
+  rationale: Limits the measure to the agent's hypothesis space; competence on different manifolds is
+    not commensurable.
+  passage: Competent contact is contact with the world as the agent represents it, and no agent-independent
+    standpoint exists from which that contact could be scored against the world itself.
+- id: scalar-discards
+  kind: interpretation
+  rationale: Generalizes from the proposition and the transfer example; holds wherever reward factors
+    through a coarsening of the world.
+  passage: A learner that maximizes a scalar faithful to its training task discards the structure that
+    would support the next task, and it appears most efficient when it is least prepared for a new one.
+runs:
+- id: belief
+  required: true
+  record: verification/belief.json

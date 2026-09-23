@@ -1,4 +1,9 @@
 {
+  "params": {
+    "a_probe_accuracy": 0.8,
+    "b_probe_accuracy": 0.85,
+    "probe_cost": 0.05
+  },
   "manifold": {
     "curvature_mean": 0.25,
     "curvature_expected": 0.25,

@@ -1,0 +1,233 @@
+[
+ {
+  "id": "amari2000",
+  "families": [
+   "Amari",
+   "Nagaoka"
+  ],
+  "authors_text": "Amari, S., and Nagaoka, H.",
+  "year": "2000",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "ay2017",
+  "families": [
+   "Ay",
+   "Jost",
+   "Lê",
+   "Schwachhöfer"
+  ],
+  "authors_text": "Ay, N., Jost, J., Lê, H. V., and Schwachhöfer, L.",
+  "year": "2017",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "astrom1965",
+  "families": [
+   "Åström"
+  ],
+  "authors_text": "Åström, K. J.",
+  "year": "1965",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "blackwell1953",
+  "families": [
+   "Blackwell"
+  ],
+  "authors_text": "Blackwell, D.",
+  "year": "1953",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "chentsov1982",
+  "families": [
+   "Chentsov"
+  ],
+  "authors_text": "Chentsov, N. N.",
+  "year": "1982",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "cover2006",
+  "families": [
+   "Cover",
+   "Thomas"
+  ],
+  "authors_text": "Cover, T. M., and Thomas, J. A.",
+  "year": "2006",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "dreyfus2002",
+  "families": [
+   "Dreyfus"
+  ],
+  "authors_text": "Dreyfus, H. L.",
+  "year": "2002",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "friston2015",
+  "families": [
+   "Friston",
+   "Rigoli",
+   "Ognibene",
+   "Mathys",
+   "Fitzgerald",
+   "Pezzulo"
+  ],
+  "authors_text": "Friston, K., Rigoli, F., Ognibene, D., Mathys, C., Fitzgerald, T., and Pezzulo, G.",
+  "year": "2015",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "gibson1979",
+  "families": [
+   "Gibson"
+  ],
+  "authors_text": "Gibson, J. J.",
+  "year": "1979",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "gottlieb2013",
+  "families": [
+   "Gottlieb",
+   "Oudeyer",
+   "Lopes",
+   "Baranes"
+  ],
+  "authors_text": "Gottlieb, J., Oudeyer, P.-Y., Lopes, M., and Baranes, A.",
+  "year": "2013",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "itti2009",
+  "families": [
+   "Itti",
+   "Baldi"
+  ],
+  "authors_text": "Itti, L., and Baldi, P.",
+  "year": "2009",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "kaelbling1998",
+  "families": [
+   "Kaelbling",
+   "Littman",
+   "Cassandra"
+  ],
+  "authors_text": "Kaelbling, L. P., Littman, M. L., and Cassandra, A. R.",
+  "year": "1998",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "klyubin2005",
+  "families": [
+   "Klyubin",
+   "Polani",
+   "Nehaniv"
+  ],
+  "authors_text": "Klyubin, A. S., Polani, D., and Nehaniv, C. L.",
+  "year": "2005",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "kriegeskorte2013",
+  "families": [
+   "Kriegeskorte",
+   "Kievit"
+  ],
+  "authors_text": "Kriegeskorte, N., and Kievit, R. A.",
+  "year": "2013",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "kriegeskorte2008",
+  "families": [
+   "Kriegeskorte",
+   "Mur",
+   "Bandettini"
+  ],
+  "authors_text": "Kriegeskorte, N., Mur, M., and Bandettini, P. A.",
+  "year": "2008",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "lindley1956",
+  "families": [
+   "Lindley"
+  ],
+  "authors_text": "Lindley, D. V.",
+  "year": "1956",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "merleauponty2012",
+  "families": [
+   "Merleau-Ponty"
+  ],
+  "authors_text": "Merleau-Ponty, M.",
+  "year": "2012",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "oregan2001",
+  "families": [
+   "O'Regan",
+   "Noë"
+  ],
+  "authors_text": "O'Regan, J. K., and Noë, A.",
+  "year": "2001",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "rao1945",
+  "families": [
+   "Rao"
+  ],
+  "authors_text": "Rao, C. R.",
+  "year": "1945",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "shannon1948",
+  "families": [
+   "Shannon"
+  ],
+  "authors_text": "Shannon, C. E.",
+  "year": "1948",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "sutton2018",
+  "families": [
+   "Sutton",
+   "Barto"
+  ],
+  "authors_text": "Sutton, R. S., and Barto, A. G.",
+  "year": "2018",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "tishby2011",
+  "families": [
+   "Tishby",
+   "Polani"
+  ],
+  "authors_text": "Tishby, N., and Polani, D.",
+  "year": "2011",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "uexkull2010",
+  "families": [
+   "Uexküll"
+  ],
+  "authors_text": "Uexküll, J. von",
+  "year": "2010",
+  "status": "UNVERIFIED"
+ }
+]
